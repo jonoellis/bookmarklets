@@ -1,5 +1,22 @@
 # Bookmarklets
 
+## Kill Sticky
+```javascript
+javascript:\(function\(\)%7B\(function%20\(\)%20%7Bvar%20i%2C%20elements%20%3D%20document.querySelectorAll\('body%20*'\)%3Bfor%20\(i%20%3D%200%3B%20i%20%3C%20elements.length%3B%20i%2B%2B\)%20%7Bif%20\(getComputedStyle\(elements%5Bi%5D\).position%20%3D%3D%3D%20'fixed'\)%20%7Belements%5Bi%5D.parentNode.removeChild\(elements%5Bi%5D\)%3B%7D%7D%7D\)\(\)%7D\)\(\)
+```
+
+## Wikipedia lookup
+```javascript
+javascript:\(function\(\)%20%7B%20function%20se\(d\)%20%7B%20return%20d.selection%20?%20d.selection.createRange\(\).text%20:%20d.getSelection\(\)%20%7D%20s%20=%20se\(document\);%20for%20\(i=0;%20i%3Cframes.length%20&&%20!s;%20i++\)%20s%20=%20se\(frames%5Bi%5D.document\);%20if%20\(!s%20%7C%7C%20s==''\)%20s%20=%20prompt\('Enter%20search%20terms%20for%20Wikipedia',''\);%20open\('http://en.wikipedia.org'%20+%20\(s%20?%20'/w/index.php?title=Special:Search&search='%20+%20encodeURIComponent\(s\)%20:%20''\)\).focus\(\);%20%7D\)\(\);
+```
+
+## Delete Google Sheet
+```javascript
+javascript:\(function\(\)%20%7B%20%20%20%20var%20eltMove%20=%20document.querySelector\('#\\\\:b2%3Ediv%3Espan'\);%20%20%20%20fireMouseEvent\(document.querySelector\('#docs-file-menu'\),%20'mousedown'\);%20%20%20%20fireMouseEvent\(eltMove,%20'mousedown'\);%20%20%20%20fireMouseEvent\(eltMove,%20'mouseup'\);%20%20%20%20fireMouseEvent\(eltMove,%20'mouseup'\);%20%20%20%20function%20fireMouseEvent\(eltTarget,%20myEvent\)%20%7B%20%20%20%20%20%20%20%20var%20screenX,%20screenY,%20clientX,%20clientY;%20%20%20%20%20%20%20%20var%20event%20=%20document.createEvent\('MouseEvents'\);%20%20%20%20%20%20%20%20event.initMouseEvent\(myEvent,%20true,%20true,%20window,%201,%20screenX,%20screenY,%20clientX,%20clientY,%20false,%20false,%20false,%20false,%200,%20null\);%20%20%20%20%20%20%20%20eltTarget.dispatchEvent\(event\);%20%20%20%20%7D%7D\)\(\);
+```
+
+
+
 ## Copy and Alert the components of a URL 
 ```javascript
 javascript:
